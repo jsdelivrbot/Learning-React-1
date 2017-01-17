@@ -23,3 +23,6 @@ Click [here](https://github.com/StephenGrider/ReactStarter/releases) then downlo
 	> npm install
 	> npm start
 ```
+
+
+downward data flow: parent component responsible for fetching data. Top level component (one that contains subcomponents that use the data) responsible for fetching
