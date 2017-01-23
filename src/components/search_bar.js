@@ -19,10 +19,10 @@ class Search extends Component {
 		// TODO go to react docs to find more events to listen to
 				// <input onChange={this.onInputChange}/>
 		return (
-			<div>
+			<div className="search-bar">
 				<input
 					value={this.state.term}
-					onChange={event => this.setState({term: event.target.value})}/>
+					onChange={event => this.onInputChange(event.target.value)}/>
 			</div>
 		);
 		// this.state.term is OK because is getter
@@ -31,6 +31,12 @@ class Search extends Component {
 		// We know value is always the correct, latest value because this.setState
 		// will change the state and trigger the componenet to be refreshed,
 		// giving it the latest value
+	}
+
+
+	onInputChange(term){
+		this.setState({term});
+		this.props.onSearchTermChange(term);
 	}
 
 	// e describes information about event
